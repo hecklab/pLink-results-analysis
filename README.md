@@ -1,8 +1,11 @@
 # pLink-results-analysis
 
-This jupyter notebook and functions were used in the data processing of the described paper below. The notebook reads in pLink output files which are deposited on Pride.
+These R scripts and functions were used in the data processing of the described paper below. The notebook reads in pLink output files which are deposited on Pride.
 
-The notebook and functions reformat the data into flat tables that resemble an output one can get from the XlinkX node of proteome discoverer.
+The sctipts and functions reformat the data into flat tables that resemble an output one can get from the XlinkX node of proteome discoverer.\
+The scripts clean the data and perform some processing which were useful in this project.
+
+Some of the processing steps might not be suitable for some data sets. The functions are meant to be reused while the notebook should serve as a guide and an example.
 
 **Characterization of protein complexes in extracellular vesicles by intact extracellular vesicle crosslinking mass spectrometry (iEVXL)**
 
@@ -15,27 +18,22 @@ Julia Bauzá-Martinez<sup>1,2</sup>, Gad Armony<sup>1,2</sup>, Matti F. Pronker<
 \*correspondence: Wei Wu, wu_wei@immunol.a-star.edu.sg or w.wu1@uu.nl  
 
 
-
 ## Instructions for use
 
 ### Environment
-The code is embedded in RMarkdown documents, one per analysis. RStudio (https://rstudio.com, no affiliation) is a convenient environment for "knitting" these documents, to create HTML or PDF output. The following packages need to be installed in R:
-
+The code is embedded in a jupyter notebook which can be executed in several enviourments, in jupyter lab for example.\
+Make sure that an R kernel is available to run the notebook.
+The following packages need to be installed in the R:
 * tidyverse
-* ggpubr
-* reshape2
-* stringr
-* colorspace
-* ggforce
-* RColorbrewer
-* VennDiagram
-* psych
+* docstring (for rendring function documentation)
 
-### Obtain the markdown documents
-To obtain these documents, use git (available in RStudio as well) to download ('clone') the documents, or simply download the files as a zip file. The URL for cloning, or the link to download the zip, are availabe under the green "Code" button above the file listing.
-We have added a project file for convenience, so you can double-click it to open the project in RStudio.
+### Obtain the notebook and functions
+To obtain these documents, use git to download ('clone') the documents, or simply download the files as a zip file from the web interface. The URL for cloning, or the link to download the zip, are availabe under the green "Code" button above the file listing.
 
 ### Obtain the data
-No data (MaxQuant output .txt files) is available in this repository, it needs to be downloaded from the Pride archive.
-From there, obtain the MQ_output_txt.zip file and extract it in the same directory as the markdown documents. The scripts will locate the required .txt file in the subfolder and load all necessary libraries.
-Second, open the .Rmd file you are interested in and 'knit' the document. The scripts will generate the plots used in the above mentioned paper. 
+No data (pLink output files) is available in this repository, it needs to be downloaded from the Pride archive.
+From there, obtain the ### files which are refered to in the notebook.
+
+### Notes
+* The frunctions assume that the fasta file used to search in pLink has the protein names in a uniprot format (sp|ACCESSION|NAME), while contaminants are not.
+* The renumber functions assumes that the fasta file used to search in pLink was modified to remove signal peptides. These functions readjust the numers to keep the uniprot numbering in place.
