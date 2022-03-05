@@ -23,17 +23,14 @@ Julia Bauzá-Martinez<sup>1,2</sup>, Gad Armony<sup>1,2</sup>, Matti F. Pronker<
 ### Environment
 The code is embedded in a jupyter notebook which can be executed in several enviourments, in jupyter lab for example.\
 Make sure that an R kernel is available to run the notebook.
-The following packages need to be installed in the R:
+The following packages need to be installed in R:
 * tidyverse
 * docstring (for rendring function documentation)
 
-### Obtain the notebook and functions
-To obtain these documents, use git to download ('clone') the documents, or simply download the files as a zip file from the web interface. The URL for cloning, or the link to download the zip, are availabe under the green "Code" button above the file listing.
+### Obtain the files
+To obtain the functions, notebook, and data, use git to download ('clone') the files, or simply download the files as a zip file from the web interface. The URL for cloning, or the link to download the zip, are availabe under the green "Code" button above the file listing.
 
-### Obtain the data
-No data (pLink output files) is available in this repository, it needs to be downloaded from the Pride archive.
-From there, obtain the ### files which are refered to in the notebook.
 
 ### Notes
-* The frunctions assume that the fasta file used to search in pLink has the protein names in a uniprot format (sp|ACCESSION|NAME), while contaminants are not.
+* The frunctions assume that the protein names in the fasta file used to search in pLink, are in the uniprot format (sp|ACCESSION|NAME), while contaminants are not (do not start with sp| ).
 * The renumber functions assumes that the fasta file used to search in pLink was modified to remove signal peptides. These functions readjust the numers to keep the uniprot numbering in place.
