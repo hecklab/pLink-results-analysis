@@ -33,4 +33,4 @@ To obtain the functions, notebook, and data, use git to download ('clone') the f
 
 ### Notes
 * The frunctions assume that the protein names in the fasta file used to search in pLink, are in the uniprot format (sp|ACCESSION|NAME), while contaminants are not (do not start with sp| ).
-* The renumber functions assumes that the fasta file used to search in pLink was modified to remove signal peptides. These functions readjust the numers to keep the uniprot numbering in place.
+* The renumber functions assumes that the fasta file used for the search in pLink was modified to remove signal peptides. These functions readjust the numers to keep the uniprot numbering in place.
